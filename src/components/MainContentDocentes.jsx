@@ -14,7 +14,8 @@ function MainContentTeacher() {
     const fetchCSV = async () => {
       try {
         const response = await fetch(
-          "https://profesorescsv.netlify.app/profesores.csv"
+          // "https://profesorescsv.netlify.app/profesores.csv"
+          "https://proyecto-notas.netlify.app/docentes.csv"
         );
         const csvData = await response.text();
         console.log("CSV Data:", csvData);
