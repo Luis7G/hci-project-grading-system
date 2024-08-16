@@ -63,7 +63,7 @@ function MainContentInvestigaciones() {
           BIENVENIDO AL PORTAL DE INVESTIGACIONES
         </h2>
         <section className="flex flex-col py-14 mt-8 w-full bg-white rounded-[30px] shadow-[0px_10px_60px_rgba(226,236,249,0.5)] max-md:max-w-full">
-          <SearchBar onSearch={handleSearch} />
+          {/* <SearchBar onSearch={handleSearch} /> */}
           <DataTable data={currentItems} />
           <Pagination
             currentPage={currentPage}
