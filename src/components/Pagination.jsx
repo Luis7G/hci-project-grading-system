@@ -1,13 +1,21 @@
 import React from "react";
 
-function Pagination({ currentPage, totalPages, setPage, totalEntries, itemsPerPage }) {
+function Pagination({
+  currentPage,
+  totalPages,
+  setPage,
+  totalEntries, // Este es el número total de filas, incluyendo el encabezado
+  itemsPerPage,
+}) {
+  // Ajustar para restar el encabezado del total
+  const totalRecords = totalEntries - 1; // Restar el encabezado
   const startIndex = (currentPage - 1) * itemsPerPage + 1;
-  const endIndex = Math.min(currentPage * itemsPerPage, totalEntries);
+  const endIndex = Math.min(currentPage * itemsPerPage, totalRecords);
 
   return (
     <div className="flex flex-wrap gap-5 justify-between self-center w-full max-w-[1038px] mt-[50px] max-md:mt-10 max-md:max-w-full">
       <div className="self-start text-lg tracking-normal text-gray-400">
-        Mostrando datos {startIndex} a {endIndex} de {totalEntries} entradas
+        Mostrando datos {startIndex} a {endIndex} de {totalRecords} entradas
       </div>
       <nav
         className="flex gap-5 text-lg tracking-normal leading-none text-gray-700 whitespace-nowrap"

@@ -1,25 +1,34 @@
 import React from "react";
 
 function DataTable({ data }) {
+  if (data.length === 0) {
+    return <div className="text-center">No hay datos disponibles.</div>;
+  }
+
   return (
-    <div className="flex overflow-hidden gap-2.5 justify-center items-center px-4 py-2.5 mt-14 text-[16px] tracking-normal text-center text-black max-md:mt-10">
-      <div className="flex flex-wrap gap-1 justify-center items-center self-stretch my-auto min-w-[256px] w-[1230px]">
-        {Object.keys(data[0] || {}).map((key) => (
-          <div
-            key={key}
-            className="flex flex-col justify-between items-center self-stretch my-auto min-h-[83px]"
-          >
-            <div className="text-gray-400">
-              {key.charAt(0).toUpperCase() + key.slice(1)}
-            </div>
-            {data.map((item, index) => (
-              <div key={index} className="mt-2.5">
-                {item[key]}
-              </div>
+    <div className="overflow-x-auto mt-14">
+      <table className="min-w-full text-center">
+        <thead>
+          <tr className="bg-gray-100 text-gray-600 text-sm leading-normal">
+            {Object.keys(data[0] || {}).map((key) => (
+              <th key={key} className="py-3 px-6">
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+              </th>
             ))}
-          </div>
-        ))}
-      </div>
+          </tr>
+        </thead>
+        <tbody className="text-gray-600 text-sm font-light">
+          {data.map((item, index) => (
+            <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+              {Object.keys(item).map((key) => (
+                <td key={key} className="py-3 px-6">
+                  {item[key]}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

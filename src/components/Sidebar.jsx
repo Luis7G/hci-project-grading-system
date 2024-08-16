@@ -62,7 +62,7 @@ function Sidebar() {
   };
 
   return (
-    <aside className="flex flex-col w-[21%] max-md:ml-0 max-md:w-full max-h-[500px]">
+    <aside className="flex flex-col w-[16.5%] max-md:ml-0 max-md:w-full max-h-[500px]">
       <nav className="flex flex-col grow text-sm font-medium tracking-normal text-center whitespace-nowrap text-slate-400">
         <div className="flex flex-col px-6 pt-5 w-full bg-white pb-[765px] shadow-[0px_10px_60px_rgba(226,236,249,0.5)] max-md:px-5 max-md:pb-24">
           <div className="flex gap-5 justify-between self-center max-w-full text-3xl font-semibold tracking-wide text-black w-[223px]">
